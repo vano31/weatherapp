@@ -1,6 +1,6 @@
 
+/////////////////////////////////////////////////////
 let elementCreator = function(type) {
-
 
     return function(className) {
 
@@ -11,38 +11,58 @@ let elementCreator = function(type) {
 
     }
 
-
 }
 
 let divmaker = elementCreator('div');
-let food = divmaker('food');
+
+////////////////////////////////////////////////////////
+
+let fullPage = divmaker('fullPage');
+
+////////////////////////////////////////////////////////
+
+let menuBar = divmaker('menuBar');///////////
+
+let searchSection = divmaker('searchSection');
+menuBar.appendChild(searchSection);
+
+let buttonSection = divmaker('buttonSection');
+menuBar.appendChild(buttonSection);
 
 
-export {food}
+fullPage.appendChild(menuBar);
+
+
+//////////////////////////////////////////////////////////
+
+let dataSection = divmaker('data');///////////
+
+let dataSectionTop = divmaker('dataSectionTop');
+dataSection.appendChild(dataSectionTop);
+
+let dataSectionBottom = divmaker('dataSectionBottom');
+dataSection.appendChild(dataSectionBottom);
+
+
+fullPage.appendChild(dataSection);
+
+//////////////////////////////////////////////////////////
+
+let mapSection = divmaker('mapSection');/////////////
+
+
+fullPage.appendChild(mapSection);
+
+
+/////////////////////////////////////////////////////////
+
+
+export {fullPage}
 
 
 
 
-/*
-let elementCreator = function(type) {
-
-    return function(name) {
 
 
 
-        name = document.createElement(type);
 
-        let nameString = Object.keys({name})[0]
-
-        name.classList.add(`${nameString}`);
-    }
-
-}
-
-
-let divmaker = elementCreator('div');
-let fullPage = divmaker()
-
-export {elementCreator}
-
-*/
