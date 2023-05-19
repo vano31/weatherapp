@@ -1,6 +1,6 @@
+import {asyncWeather} from './promisedata.js';
+//import {answer} from './promisedata.js';
 import './style.css';
-import {extra} from './extra.js'
-
 
 
 let hello = document.createElement('h1');
@@ -11,6 +11,12 @@ hello.classList.add('hello');
 
 document.body.appendChild(hello);
 
-extra.textContent = "If you're reading this, I am dead =)"
+//extra.textContent = "If you're reading this, I am dead =)"
 
-document.body.appendChild(extra);
+//document.body.appendChild(extra);
+
+
+asyncWeather().then(function(response) {
+    console.log(response)
+})
+
