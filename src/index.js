@@ -1,6 +1,8 @@
 import {asyncWeather} from './promisedata.js';
 //import {answer} from './promisedata.js';
 import './style.css';
+import {food} from './structure.js'
+
 
 
 let hello = document.createElement('h1');
@@ -19,4 +21,7 @@ document.body.appendChild(hello);
 asyncWeather().then(function(response) {
     console.log(response)
 })
+
+food.textContent = 'FOOD!'
+document.body.appendChild(food);
 
