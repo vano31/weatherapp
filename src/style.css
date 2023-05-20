@@ -1,4 +1,8 @@
 
+/*Mobile View*/
+@media only screen and (max-width: 450px) {
+
+
 * {
 
     margin: 0;
@@ -6,13 +10,14 @@
     box-sizing: border-box;
 
 }
+    
+
 
 .fullPage {
 
     display: flex;
     flex-wrap: wrap;
-    
-    
+
 
 }
 
@@ -90,3 +95,49 @@
 
 
 }
+
+
+}
+
+/*Desktop View*/
+
+@media only screen and (min-width: 451px) {
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.fullPage {
+
+
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 1fr 11fr;
+
+
+}
+
+.menuBar {
+
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+.m
+
+
+
+}
+
