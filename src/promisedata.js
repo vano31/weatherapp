@@ -1,8 +1,8 @@
-function asyncWeather () {
+function asyncWeather (searchlocation) {
 
     return new Promise (function (resolve, reject) {
 
-        let searchlocation = 'abuja';
+        //let searchlocation = 'abuja';
 
         let attemptedLocation = fetch(`http://api.weatherapi.com/v1/current.json?key=8a9310029e7f43e2b6a40658230205&q=${searchlocation}&aqi=no`, {mode: 'cors'});
 

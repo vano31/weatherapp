@@ -1,30 +1,60 @@
 import {asyncWeather} from './promisedata.js';
-import {fullPage} from './structure.js';
+import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton} from './structure.js';
 import './style.css';
 
 
-////import {food} from './structure.js'
-
-
 /*
-let hello = document.createElement('h1');
-
-hello.textContent = 'Hello Citizens of Planet Earth';
-
-hello.classList.add('hello');
-
-document.body.appendChild(hello);
+asyncWeather('san diego').then(function(response) {
+    console.log(response)
+})
 */
 
-//extra.textContent = "If you're reading this, I am dead =)"
+let location = {
+    
+};
 
-//document.body.appendChild(extra);
+document.body.appendChild(fullPage);
+
+searchButton.addEventListener('click', function() {
+
+    location.name = searchBar.value;
+    asyncWeather(location.name).then(function(response) {
+        console.log(response);
+        location.officialName = response.location.name;
+        location.region = response.location.region;
+        location.country = response.location.country;
+        location.lat = response.location.lat;
+        location.lon = response.location.lon;
+        location.tempF = response.current.temp_f;
+        location.tempC = response.current.temp_c;
+        location.conditionText = response.current.condition.text;
+        location.conditionIcon = response.current.condition.icon;
+        location.humidity = response.current.humidity;
+        location.wind = response.current.wind_mph;
+        location.cloud = response.current.cloud;
+
+        return location
+
+    }).then(function(location) {
+
+        //console.log(location);
+
+        
+        for (const property in location  ) {
+            console.log(location[property]);
+        }
+        
+
+    
 
 
-asyncWeather().then(function(response) {
-    console.log(response)
+    })
+
+    
+
+
 })
 
 
-document.body.appendChild(fullPage);
+
 

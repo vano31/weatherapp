@@ -59,8 +59,40 @@ fullPage.appendChild(mapSection);
 
 /////////////////////////////////////////////////////////
 
+let formMaker = elementCreator('form');
 
-export {fullPage}
+let searchForm = formMaker('searchForm');
+
+/////////////////////////////////////
+
+let searchBarMaker = elementCreator('input');
+
+let searchBar = searchBarMaker('searchBar');
+
+/////////////////////////////////////////////
+
+searchBar.type = 'text';
+searchBar.id = 'searchBar';
+searchBar.name = 'searchBar';
+
+///////////////////////////////////////////
+
+let searchButton = document.createElement('button');
+searchButton.classList.add('searchButton');
+searchButton.type = 'button';
+searchButton.textContent = 'Search';
+
+////////////////////////////////////////
+
+searchForm.appendChild(searchBar);
+searchForm.appendChild(searchButton);
+
+searchSection.appendChild(searchForm);
+
+
+////////////////////////////////////////////////////////
+
+export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton}
 
 
 
