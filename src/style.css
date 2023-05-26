@@ -98,6 +98,11 @@
 
 }
 
+.borderCheck {
+
+
+}
+
 
 }
 
@@ -193,6 +198,15 @@ body {
 
 }
 
+
+.borderCheck {
+
+    border-style: dashed;
+    border-color: black;
+    width: 200px;
+    height: 200px;
+
+}
 
 
 }

@@ -20,6 +20,7 @@ let divmaker = elementCreator('div');
 let fullPage = divmaker('fullPage');
 
 ////////////////////////////////////////////////////////
+////Start of Making Main Sections
 
 let menuBar = divmaker('menuBar');///////////
 
@@ -34,8 +35,6 @@ fullPage.appendChild(menuBar);
 
 
 //////////////////////////////////////////////////////////
-
-
 
 let dataSection = divmaker('data');///////////
 
@@ -92,7 +91,50 @@ searchSection.appendChild(searchForm);
 
 ////////////////////////////////////////////////////////
 
-export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton}
+//// Start of Making Units Within Main Sections
+
+let locationHeading = divmaker('locationHeading');
+locationHeading.classList.add('borderCheck');
+let currentTemperature = divmaker('currentTemperature');
+currentTemperature.classList.add('borderCheck');
+let conditionIcon = divmaker('conditionIcon');
+conditionIcon.classList.add('borderCheck');
+let conditionInfoHeading = divmaker('conditionInfoHeading');
+conditionInfoHeading.classList.add('borderCheck');
+let lastUpdated = divmaker('lastUpdated');
+lastUpdated.classList.add('borderCheck');
+let temperatureSwitchButton = document.createElement('button');
+temperatureSwitchButton.classList.add('borderCheck');
+
+dataSectionTop.appendChild(locationHeading);
+dataSectionTop.appendChild(currentTemperature);
+dataSectionTop.appendChild(conditionIcon);
+dataSectionTop.appendChild(lastUpdated);
+dataSectionTop.appendChild(temperatureSwitchButton);
+
+
+////////////////////////////////////////////////////
+
+let uvBox = divmaker('uvBox');
+uvBox.classList.add('borderCheck');
+let humidityBox = divmaker('humidityBox');
+humidityBox.classList.add('borderCheck');
+let windBox = divmaker('windBox');
+windBox.classList.add('borderCheck');
+let cloudBox = divmaker('cloudBox');
+cloudBox.classList.add('borderCheck');
+
+dataSectionBottom.appendChild(uvBox);
+dataSectionBottom.appendChild(humidityBox);
+dataSectionBottom.appendChild(windBox);
+dataSectionBottom.appendChild(cloudBox);
+
+
+
+////////////////////////////////////////////////////////////
+
+
+export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, conditionInfoHeading, lastUpdated, temperatureSwitchButton, uvBox, humidityBox, windBox, cloudBox}
 
 
 

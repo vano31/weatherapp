@@ -1,5 +1,5 @@
 import {asyncWeather} from './promisedata.js';
-import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton} from './structure.js';
+import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, lastUpdated, temperatureSwitchButton, conditionInfoHeading, uvBox, humidityBox, windBox, cloudBox} from './structure.js';
 import './style.css';
 
 
