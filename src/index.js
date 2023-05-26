@@ -9,7 +9,7 @@ asyncWeather('san diego').then(function(response) {
 })
 */
 
-let location = {
+let currentWeather = {
     
 };
 
@@ -17,42 +17,38 @@ document.body.appendChild(fullPage);
 
 searchButton.addEventListener('click', function() {
 
-    location.name = searchBar.value;
-    asyncWeather(location.name).then(function(response) {
+    currentWeather.name = searchBar.value;
+    asyncWeather(currentWeather.name).then(function(response) {
         console.log(response);
-        location.officialName = response.location.name;
-        location.region = response.location.region;
-        location.country = response.location.country;
-        location.lat = response.location.lat;
-        location.lon = response.location.lon;
-        location.tempF = response.current.temp_f;
-        location.tempC = response.current.temp_c;
-        location.conditionText = response.current.condition.text;
-        location.conditionIcon = response.current.condition.icon;
-        location.humidity = response.current.humidity;
-        location.wind = response.current.wind_mph;
-        location.cloud = response.current.cloud;
+        currentWeather.officialName = response.location.name;
+        currentWeather.region = response.location.region;
+        currentWeather.country = response.location.country;
+        currentWeather.lat = response.location.lat;
+        currentWeather.lon = response.location.lon;
+        currentWeather.tempF = response.current.temp_f;
+        currentWeather.tempC = response.current.temp_c;
+        currentWeather.conditionText = response.current.condition.text;
+        currentWeather.conditionIcon = response.current.condition.icon;
+        currentWeather.humidity = response.current.humidity;
+        currentWeather.wind = response.current.wind_mph;
+        currentWeather.cloud = response.current.cloud;
 
-        return location
+        return currentWeather
 
-    }).then(function(location) {
+    }).then(function(currentWeather) {
 
         //console.log(location);
 
         
-        for (const property in location  ) {
-            console.log(location[property]);
+        for (const property in currentWeather  ) {
+            console.log(currentWeather[property]);
         }
         
-
-    
-
 
     })
 
     
-
-
+    
 })
 
 
