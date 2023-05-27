@@ -19,6 +19,12 @@ function asyncWeather (searchlocation) {
 
         })
 
+        .catch(function(error) {
+
+            console.log(error)
+
+        })
+
 
         
 

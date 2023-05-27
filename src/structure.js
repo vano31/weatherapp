@@ -97,8 +97,12 @@ let locationHeading = divmaker('locationHeading');
 locationHeading.classList.add('borderCheck');
 let currentTemperature = divmaker('currentTemperature');
 currentTemperature.classList.add('borderCheck');
-let conditionIcon = divmaker('conditionIcon');
+
+let conditionIcon = document.createElement('img');
+conditionIcon.classList.add('conditionIcon');
 conditionIcon.classList.add('borderCheck');
+
+
 let conditionInfoHeading = divmaker('conditionInfoHeading');
 conditionInfoHeading.classList.add('borderCheck');
 let lastUpdated = divmaker('lastUpdated');
@@ -109,6 +113,7 @@ temperatureSwitchButton.classList.add('borderCheck');
 dataSectionTop.appendChild(locationHeading);
 dataSectionTop.appendChild(currentTemperature);
 dataSectionTop.appendChild(conditionIcon);
+dataSectionTop.appendChild(conditionInfoHeading);
 dataSectionTop.appendChild(lastUpdated);
 dataSectionTop.appendChild(temperatureSwitchButton);
 
