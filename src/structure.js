@@ -136,12 +136,26 @@ dataSectionBottom.appendChild(humidityBox);
 dataSectionBottom.appendChild(windBox);
 dataSectionBottom.appendChild(cloudBox);
 
+/////////////////////////////////////////////////////
+
+let refreshButton = document.createElement('button');
+refreshButton.classList.add('refreshButton');
+refreshButton.textContent = 'Refresh';
+
+let randomButton = document.createElement('button');
+randomButton.classList.add('randomButton');
+randomButton.textContent = 'Random';
+
+buttonSection.appendChild(refreshButton);
+buttonSection.appendChild(randomButton);
+
+
 
 
 ////////////////////////////////////////////////////////////
 
 
-export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, conditionInfoHeading, lastUpdated, temperatureSwitchButton, uvBox, humidityBox, windBox, cloudBox}
+export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, conditionInfoHeading, lastUpdated, temperatureSwitchButton, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton}
 
 
 
