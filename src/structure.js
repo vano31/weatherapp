@@ -108,7 +108,9 @@ conditionInfoHeading.classList.add('borderCheck');
 let lastUpdated = divmaker('lastUpdated');
 lastUpdated.classList.add('borderCheck');
 let temperatureSwitchButton = document.createElement('button');
+temperatureSwitchButton.classList.add('temperatureSwitchButton');
 temperatureSwitchButton.classList.add('borderCheck');
+temperatureSwitchButton.textContent = `Switch Temperature Unit`
 
 dataSectionTop.appendChild(locationHeading);
 dataSectionTop.appendChild(currentTemperature);

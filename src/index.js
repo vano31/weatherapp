@@ -13,15 +13,69 @@ let currentWeather = {
     
 };
 
-//////////////////////////////////////////////
+
+
+///////////////////////////////////////////Global Functions
+
+let loadLastSearchToDom = function() {
+
+    let lastWeatherJson = localStorage.getItem('currentWeather');
+    let lastWeather = JSON.parse(lastWeatherJson);
+    currentWeather = lastWeather;
+    asyncWeather(currentWeather.name).then(function(response) {
+        //console.log(response);
+        currentWeather.officialName = response.location.name;
+        currentWeather.region = response.location.region;
+        currentWeather.country = response.location.country;
+        currentWeather.lat = response.location.lat;
+        currentWeather.lon = response.location.lon;
+        currentWeather.tempF = response.current.temp_f;
+        currentWeather.tempC = response.current.temp_c;
+        currentWeather.conditionText = response.current.condition.text;
+        currentWeather.conditionIcon = 'https://' + ((response.current.condition.icon).split('//'))[1];
+        currentWeather.humidity = response.current.humidity;
+        currentWeather.wind = response.current.wind_mph;
+        currentWeather.cloud = response.current.cloud;
+        currentWeather.uv = response.current.uv;
+        currentWeather.lastUpdated = new Date();
+
+        return currentWeather
+
+    }).then(function(currentWeather) {
+
+        console.log(`Just Checking`);
+        displayCurrentWeatherToDom();
+        saveLastSearched();
+
+        /*
+
+        for (const property in currentWeather  ) {
+            console.log(currentWeather[property]);
+        }
+        */
+        //return currentWeather
+
+    })
+
+    
+    console.log(currentWeather);
+    return currentWeather;
+
+
+
+
+}
+
 
 let displayCurrentWeatherToDom = function() {
 
     locationHeading.textContent = `${currentWeather.officialName}, ${currentWeather.region}, ${currentWeather.country}`;
-    currentTemperature.textContent = `${currentWeather.tempF}`;
+    currentTemperature.textContent = `${currentWeather.tempF} degrees F`;
 
     conditionIcon.src = `${currentWeather.conditionIcon}`;
     conditionInfoHeading.textContent = `${currentWeather.conditionText} in ${currentWeather.officialName}`;
+
+    lastUpdated.textContent = `Last Updated on ${currentWeather.lastUpdated}`;
 
     uvBox.textContent = `${currentWeather.uv}`;
     humidityBox.textContent = `${currentWeather.humidity}`;
@@ -29,13 +83,32 @@ let displayCurrentWeatherToDom = function() {
     cloudBox.textContent = `${currentWeather.cloud}`;
 
 
+
+
 }
+
+let saveLastSearched = function() {
+
+    let currentWeatherJson = JSON.stringify(currentWeather);
+    localStorage.setItem('currentWeather', currentWeatherJson);
+
+
+}
+
 
 
 
 //////////////////////////////////////////////
 
+
+
 document.body.appendChild(fullPage);
+
+
+if (localStorage.getItem('currentWeather')) {
+    loadLastSearchToDom();
+
+}
 
 searchButton.addEventListener('click', function() {
 
@@ -55,6 +128,7 @@ searchButton.addEventListener('click', function() {
         currentWeather.wind = response.current.wind_mph;
         currentWeather.cloud = response.current.cloud;
         currentWeather.uv = response.current.uv;
+        currentWeather.lastUpdated = new Date();
 
         return currentWeather
 
@@ -62,6 +136,7 @@ searchButton.addEventListener('click', function() {
 
         console.log(`Just Checking`);
         displayCurrentWeatherToDom();
+        saveLastSearched();
 
         /*
 
@@ -79,6 +154,20 @@ searchButton.addEventListener('click', function() {
     return currentWeather;
 
     //displayCurrentWeatherToDom();
+
+})
+
+temperatureSwitchButton.addEventListener('click', function() {
+
+    if (currentTemperature.textContent === `${currentWeather.tempF} degrees F`) {
+
+        currentTemperature.textContent = `${currentWeather.tempC} degrees C`;
+
+    }   else if (currentTemperature.textContent === `${currentWeather.tempC} degrees C`) {
+
+        currentTemperature.textContent = `${currentWeather.tempF} degrees F`
+
+    }
 
 })
 
