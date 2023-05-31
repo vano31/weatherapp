@@ -209,6 +209,9 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
 }
@@ -233,6 +236,18 @@ body {
 
 }
 */
+
+
+.mapHolder {
+
+
+    border-style: dashed;
+    border-color: black;
+    height: 500px;
+    width: 500px;
+
+
+}
 
 }
 

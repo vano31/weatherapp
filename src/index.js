@@ -1,5 +1,5 @@
 import {asyncWeather, randomCities} from './promisedata.js';
-import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, lastUpdated, temperatureSwitchButton, conditionInfoHeading, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton} from './structure.js';
+import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, lastUpdated, temperatureSwitchButton, conditionInfoHeading, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton, mapHolder} from './structure.js';
 import './style.css';
 //const cities = window.require('all-the-cities');
 
