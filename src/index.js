@@ -1,7 +1,7 @@
-import {asyncWeather} from './promisedata.js';
+import {asyncWeather, randomCities} from './promisedata.js';
 import {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, lastUpdated, temperatureSwitchButton, conditionInfoHeading, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton} from './structure.js';
 import './style.css';
-const cities = require('all-the-cities');
+//const cities = window.require('all-the-cities');
 
 
 /*
@@ -228,9 +228,9 @@ randomButton.addEventListener('click', function() {
         return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
     }
 
-    let randomNumber = getRandomIntInclusive(0, 138398);
+    let randomNumber = getRandomIntInclusive(0, randomCities.length);
 
-    currentWeather.name = cities[randomNumber].name;
+    currentWeather.name = randomCities[randomNumber];
 
     asyncWeather(currentWeather.name).then(function(response) {
         //console.log(response);

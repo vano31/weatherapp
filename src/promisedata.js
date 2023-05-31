@@ -34,7 +34,85 @@ function asyncWeather (searchlocation) {
 
 };
 
-export {asyncWeather}
+/////////
+
+//https://www.planetware.com/world/top-cities-in-the-world-to-visit-eng-1-39.htm
+//https://www.travelandleisure.com/worlds-best/cities
+
+
+let randomCities = [
+
+'Paris',
+'New York City',
+'London',
+'Bangkok',
+'Hong Kong',
+'Dubai',
+'Singapore',
+'Rome',
+'Macau',
+'Istanbul',
+'Kuala Lumpur',
+'Delhi',
+'Tokyo',
+'Antayla',
+'Mexico City',
+'Porto',
+'San Francisco',
+'Beijing',
+'Los Angeles',
+'Chicago',
+'Barcelona',
+'Abu Dhabi',
+'Amsterdam',
+'Madrid',
+'Sydney',
+'San Miguel de Allende',
+'Lisbon',
+'Vienna',
+'Udaipur',
+'Ubud',
+'Kyoto',
+'Florence',
+'Oaxaca',
+'Chiang Mai',
+'Bangkok',
+'Taipei',
+'Krakow',
+'Luang Prabang',
+'San Sebastian',
+'Bodrum',
+'Jaipur',
+'Charleston',
+'Cape Town',
+'Trieste',
+'Ljubljana',
+'Seoul',
+'Antigua Guatemala',
+'Porto',
+'Accra',
+'Benguerra Island',
+'Cairo',
+'Lagos',
+'Abuja',
+'Marrakesh',
+'Stone Town',
+'Johannesburg',
+'Kigali',
+'Essaouira',
+'Windhoek',
+'Durban',
+'Nairobi',
+'Algiers',
+'Luxor',
+'Dar es Salaam',
+'Fes'
+
+
+]
+
+
+export {asyncWeather, randomCities}
 
 
 

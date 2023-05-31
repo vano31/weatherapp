@@ -1,6 +1,22 @@
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
+  
+  resolve: {
+    fallback: {
+        "fs": false
+    },
+  },
+
+  plugins: [
+    // fix "process is not defined" error:
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
+  ],
+
+
   mode: 'development',
   entry: './src/index.js',
   devtool: 'inline-source-map',
