@@ -52,10 +52,10 @@ fullPage.appendChild(dataSection);
 
 let mapSection = divmaker('mapSection');/////////////
 
-let map = divmaker('map');
-map.id = 'map';
+let mapHolder = divmaker('map');
+mapHolder.id = 'map';
 
-mapSection.appendChild(map);
+mapSection.appendChild(mapHolder);
 
 
 fullPage.appendChild(mapSection);
@@ -160,7 +160,7 @@ buttonSection.appendChild(randomButton);
 ////////////////////////////////////////////////////////////
 
 
-export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, conditionInfoHeading, lastUpdated, temperatureSwitchButton, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton, map}
+export {fullPage, menuBar, searchSection, buttonSection, dataSection, dataSectionTop, dataSectionBottom, mapSection, searchBar, searchButton, locationHeading, currentTemperature, conditionIcon, conditionInfoHeading, lastUpdated, temperatureSwitchButton, uvBox, humidityBox, windBox, cloudBox, randomButton, refreshButton, mapHolder}
 
 
 
