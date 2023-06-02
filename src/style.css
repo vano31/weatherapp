@@ -95,6 +95,12 @@
 
     background-color: silver;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
 
 }
 
@@ -117,6 +123,17 @@
 
 }
 */
+
+#map {
+
+
+    border-style: dashed;
+    border-color: black;
+    height: 300px;
+    width: 300px;
+
+
+}
 
 
 }
@@ -243,8 +260,8 @@ body {
 
     border-style: dashed;
     border-color: black;
-    height: 500px;
-    width: 500px;
+    height: 800px;
+    width: 800px;
 
 
 }
