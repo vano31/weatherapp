@@ -40,6 +40,9 @@ let loadLastSearchToDom = function() {
         currentWeather.uv = response.current.uv;
         currentWeather.lastUpdated = new Date();
 
+        map.panTo([currentWeather.lat, currentWeather.lon]);
+        L.marker([currentWeather.lat, currentWeather.lon]).addTo(map);
+
         return currentWeather
 
     }).then(function(currentWeather) {
@@ -109,6 +112,7 @@ let saveLastSearched = function() {
 document.body.appendChild(fullPage);
 
 const map = L.map('map').setView([51.505, -0.09], 13);
+const marker = L.marker([51.5, -0.09]).addTo(map);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -145,6 +149,9 @@ searchButton.addEventListener('click', function() {
         currentWeather.uv = response.current.uv;
         currentWeather.lastUpdated = new Date();
 
+        
+        map.panTo([currentWeather.lat, currentWeather.lon]);
+        L.marker([currentWeather.lat, currentWeather.lon]).addTo(map);
         return currentWeather
 
     }).then(function(currentWeather) {
@@ -205,6 +212,9 @@ refreshButton.addEventListener('click', function() {
         currentWeather.uv = response.current.uv;
         currentWeather.lastUpdated = new Date();
 
+        map.panTo([currentWeather.lat, currentWeather.lon]);
+        L.marker([currentWeather.lat, currentWeather.lon]).addTo(map);
+
         return currentWeather
 
     }).then(function(currentWeather) {
@@ -262,6 +272,9 @@ randomButton.addEventListener('click', function() {
         currentWeather.cloud = response.current.cloud;
         currentWeather.uv = response.current.uv;
         currentWeather.lastUpdated = new Date();
+
+        map.panTo([currentWeather.lat, currentWeather.lon]);
+        L.marker([currentWeather.lat, currentWeather.lon]).addTo(map);
 
         return currentWeather
 
